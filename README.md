@@ -37,21 +37,33 @@ REFERENCES 테이블이름 test (필드이름 phone)
 
 1.db 설치
 sudo apt-get install mariadb-server
+
+
 2.db 접속
 sudo mysql -u root
+
+
 3.root 비밀번호 설정
 alter user 'root'@'localhost' identified by '1234';
+
+
 4.나간후 재접속
 나가기 : CTRL + C
 재접속 : mysql -u root -p
+
+
 5.db생성 및 사용
 create database test;
 use test;
+
+
 6. 테이블 생성 - 센서 데이터 , 현재 시간을 컬럼으로 한 테이블
 create table sensordb(
 sensing INT,
 ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATA CURRENT_TIMESTAMP
 );
+
+
 7데이터 삽입
 insert into sensordb(sensing) values(1023);
 select*from sensordb;
